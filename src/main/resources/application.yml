@@ -1,0 +1,12 @@
+spring:
+  resources:
+    static-locations:
+      - classpath:/resources/
+  jpa.open-in-view: true
+  liquibase:
+    change-log: classpath:/db/changelog/schema.xml
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password

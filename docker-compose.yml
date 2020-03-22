@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: local-mysql
+    ports:
+      - 3306:3306
+    # If you need data between app restarts, please uncomment and adapt directory ~/demo-store-db to your needs.
+    # The directory must exist.
+    # volumes:
+    #  - ~/demo-store-db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "demo"
+      MYSQL_DATABASE: "demo"
+      MYSQL_USER: "demo"
+      MYSQL_PASSWORD: "demo"
+  demo-store:
+    depends_on:
+      - mysql
+    build: ./
+    container_name: demo-store
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - 8080:8080

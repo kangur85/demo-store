@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    hikari:
+      initialization-fail-timeout: 0
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/demo
+    username: demo
+    password: demo
