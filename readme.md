@@ -1,3 +1,5 @@
+![Travis badge](https://travis-ci.org/kangur85/demo-store.svg?branch=master)
+
 ### Demo store
 An example of Spring Boot RESTful application.
 
